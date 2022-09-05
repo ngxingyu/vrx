@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <sdf version="1.6">
   <model name="blue_projectile">
     <link name="link">
@@ -23,7 +23,7 @@
       </collision>
       <visual name="visual">
         <geometry>
-	        <sphere>
+          <sphere>
             <radius>0.0285</radius>
           </sphere>
         </geometry>
@@ -50,6 +50,16 @@
           </sphere>
         </geometry>
       </buoyancy>
+    </plugin>
+    <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>30</updateRate>
+      <bodyName>blue_projectile::link</bodyName>
+      <topicName>blue_projectile/odom</topicName>
+      <gaussianNoise>0</gaussianNoise>
+      <frameName>world</frameName>
+      <xyzOffsets>0 0 0</xyzOffsets>
+      <rpyOffsets>0 0 0</rpyOffsets>
     </plugin>
   </model>
 </sdf>
