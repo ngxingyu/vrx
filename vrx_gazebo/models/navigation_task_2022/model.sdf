@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!-- Prototype of the VRX navigation task -->
+<sdf version="1.6">
+  <model name="navigation_task_2022">
+    <!-- Start -->
+    <!-- Starboard_border -->
+    <include>
+      <name>red_bound_start</name>
+      <pose>30.8874 -5.80274 -0.2 0 -0 0</pose>
+      <uri>model://surmark46104</uri>
+    </include>
+
+    <include>
+      <name>red_bound_1</name>
+      <pose>16.4227 -3.0515 0 0 -0 0</pose>
+      <uri>model://surmark950410</uri>
+    </include>
+
+    <include>
+      <name>red_bound_2</name>
+      <pose>1.574 8.7242 0 0 -0 0</pose>
+      <uri>model://surmark950410</uri>
+    </include>
+
+    <include>
+      <name>red_bound_3</name>
+      <pose>-5.5798 20.9289 0 0 -0 0</pose>
+      <uri>model://surmark950410</uri>
+    </include>
+
+    <include>
+      <name>red_bound_4</name>
+      <pose>-8.2084 34.9953 0 0 -0 0</pose>
+      <uri>model://surmark950410</uri>
+    </include>
+
+    <include>
+      <name>red_bound_5</name>
+      <pose>-22.3051 33.4804 0 0 -0 0</pose>
+      <uri>model://surmark950410</uri>
+    </include>
+
+    <include>
+      <name>red_bound_6</name>
+      <pose>-25.539 18.0283 -0.2 0 -0 0</pose>
+      <uri>model://surmark950410</uri>
+    </include>
+    <include>
+      <name>red_bound_end</name>
+      <pose>-40.539 0.0283 -0.2 0 -0 0</pose>
+      <uri>model://surmark46104</uri>
+    </include>
+
+
+    <!-- Port_border -->
+    <include>
+      <name>green_bound_start</name>
+      <pose>43.2914 11.2 -0.2 0 -0 0</pose>
+      <uri>model://surmark46104</uri>
+    </include>
+
+    <include>
+      <name>green_bound_1</name>
+      <pose>32.3915 11.2422 -0.2 0 -0 0</pose>
+      <uri>model://surmark950400</uri>
+    </include>
+
+    <include>
+      <name>green_bound_2</name>
+      <pose>15.4509 20.1164 -0.2 0 -0 0</pose>
+      <uri>model://surmark950400</uri>
+    </include>
+
+    <include>
+      <name>green_bound_3</name>
+      <pose>13.7734 29.351 -0.2 0 -0 0</pose>
+      <uri>model://surmark950400</uri>
+    </include>
+
+    <include>
+      <name>green_bound_4</name>
+      <pose>-5.9557 47.7238 -0.2 0 -0 0</pose>
+      <uri>model://surmark950400</uri>
+    </include>
+
+    <include>
+      <name>green_bound_5</name>
+      <pose>-30.8278 44.0979 -0.2 0 -0 0</pose>
+      <uri>model://surmark950400</uri>
+    </include>
+
+    <include>
+      <name>green_bound_6</name>
+      <pose>-42.643 19.1729 -0.2 0 -0 0</pose>
+      <uri>model://surmark950400</uri>
+    </include>
+
+    <include>
+      <name>green_bound_end</name>
+      <pose>-47.643 10.1729 -0.2 0 -0 0</pose>
+      <uri>model://surmark46104</uri>
+    </include>
+
+    <!-- Obstacles -->
+
+    <include>
+      <name>obstacle_1</name>
+      <pose>23.283 18.3719 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a5</uri>
+    </include>
+
+    <include>
+      <name>obstacle_2</name>
+      <pose>-3.6471 31.2087 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a5</uri>
+    </include>
+
+    <include>
+      <name>obstacle_3</name>
+      <pose>-15.2333 38.5559 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a5</uri>
+    </include>
+
+    <include>
+      <name>obstacle_4</name>
+      <pose>-13.842 45.2626 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a5</uri>
+    </include>
+
+    <include>
+      <name>obstacle_5</name>
+      <pose>-19.9105 43.4974 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a5</uri>
+    </include>
+
+    <include>
+      <name>obstacle_6</name>
+      <pose>-33.5759 32.8883 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a5</uri>
+    </include>
+
+    <include>
+      <name>obstacle_7</name>
+      <pose>-30.2334 29.1624 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a5</uri>
+    </include>
+
+    <include>
+      <name>obstacle_8</name>
+      <pose>-35.506 23.524 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a5</uri>
+    </include>
+
+    <include>
+      <name>obstacle_9</name>
+      <pose>21.0734 -1.21053 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a7</uri>
+    </include>
+  </model>
+</sdf>

@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!-- Model for the VRX navigation course -->
+<sdf version="1.6">
+  <model name="2022_course_b">
+    <!-- boundaries -->
+
+    <include>
+      <name>mb_round_buoy_orange_1</name>
+      <pose>-60 -60 0.0 0 0 0 </pose>
+      <uri>model://mb_round_buoy_orange</uri>
+    </include>
+
+    <include>
+      <name>mb_round_buoy_orange_2</name>
+      <pose>-60 0 0.0 0 0 0 </pose>
+      <uri>model://mb_round_buoy_orange</uri>
+    </include>
+
+    <include>
+      <name>mb_round_buoy_orange_3</name>
+      <pose>-60 60 0 0 0 </pose>
+      <uri>model://mb_round_buoy_orange</uri>
+    </include>
+
+    <include>
+      <name>mb_round_buoy_orange_4</name>
+      <pose>0 60 0 0 0 </pose>
+      <uri>model://mb_round_buoy_orange</uri>
+    </include>
+
+    <include>
+      <name>mb_round_buoy_orange_5</name>
+      <pose>60 60 0 0 0 </pose>
+      <uri>model://mb_round_buoy_orange</uri>
+    </include>
+
+    <include>
+      <name>mb_round_buoy_orange_6</name>
+      <pose>60 0 0 0 0 </pose>
+      <uri>model://mb_round_buoy_orange</uri>
+    </include>
+
+    <include>
+      <name>mb_round_buoy_orange_7</name>
+      <pose>60 -60 0 0 0 </pose>
+      <uri>model://mb_round_buoy_orange</uri>
+    </include>
+
+    <include>
+      <name>follow_the_path</name>
+      <pose>0 5 -0.2 0 -0 0</pose>
+      <uri>model://navigation_task_2_2022</uri>
+    </include>
+
+    
+    <!-- <include>
+      <name>detect_and_dock</name>
+      <pose>45 -15 0 0 -0 0.8</pose>
+      <uri>model://dock_2022</uri>
+    </include> -->
+
+    <!-- <include>
+      <name>scan_the_code</name>
+			<uri>model://robotx_light_buoy</uri>
+			<pose>0 -10 0.25 0 0 3.14</pose>
+		</include> -->
+
+
+		<!-- The VRX animal buoys -->
+		<include>
+			<name>crocodile_buoy</name>
+			<pose>10 -2 0 0 0 0</pose>
+			<uri>model://crocodile_buoy</uri>
+		</include>
+
+		<include>
+			<name>platypus_buoy</name>
+			<pose>0 -10 0 0 0 0</pose>
+			<uri>model://platypus_buoy</uri>
+		</include>
+
+		<include>
+			<name>turtle_buoy</name>
+			<pose>-20 -15 0 0 0 0</pose>
+			<uri>model://turtle_buoy</uri>
+		</include>
+
+    <!-- <include>
+      <name>find_and_fling</name>
+			<uri>model://platform_2022</uri>
+			<pose>-30 -30 0 0 0 1.57</pose>
+		</include> -->
+
+    <include>
+      <name>entry_and_exit_gates</name>
+			<uri>model://robotx_2022_finals_entrance_gate</uri>
+			<pose>0 -50 0 0 0 0</pose>
+		</include>
+
+
+
+    
+    <!-- Obstacles -->
+
+    <include>
+      <name>obstacle_1</name>
+      <pose>-23.283 18.3719 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a5</uri>
+    </include>
+
+    <include>
+      <name>obstacle_6</name>
+      <pose>-33.5759 32.8883 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a5</uri>
+    </include>
+
+    <include>
+      <name>obstacle_7</name>
+      <pose>0 0 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a5</uri>
+    </include>
+
+    <include>
+      <name>obstacle_8</name>
+      <pose>30 -30 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a5</uri>
+    </include>
+
+    <include>
+      <name>obstacle_9</name>
+      <pose>10 -40 -0.2 0 -0 0</pose>
+      <uri>model://polyform_a7</uri>
+    </include>
+  </model>
+</sdf>
