@@ -38,7 +38,6 @@
 		</include>
 		<!-- Finals course -->
 		<include>
-			<name>finals_course</name>
 			<uri>model://2022_course_b</uri>
 			<pose>-482.06 230.16 0.25 0 0 0</pose>
 		</include>
@@ -56,13 +55,6 @@
 		<include>
 			<uri>model://dock_2022</uri>
 			<pose>${-482.06+45} ${230.16-15} 0 0 -0 0.8</pose>
-		</include>
-
-		<!-- The projectile for the ball shooter -->
-		<include>
-			<name>blue_projectile</name>
-			<pose>-7 60 0.03 0 0 0</pose>
-			<uri>model://blue_projectile</uri>
 		</include>
 
 		<!-- The scoring plugin -->

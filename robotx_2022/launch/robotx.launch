@@ -10,13 +10,22 @@ roslaunch robotx_2022 robotx.launch world:="2.2" asv:="asv" uav:="jellyfish"
          > <plugin name="ros_interface_plugin" filename="librotors_gazebo_ros_interface_plugin.so"/>
     -->
 
-    <param name="/use_sim_time" value="false" />
-    <!-- <arg name="world" default="2.1" /> -->
-    <!-- <arg name="course" default="sydneyregatta.world" /> -->
-    <!-- <arg name="course" default="perception_task.world" /> -->
-    <!-- <arg name="course" default="scan_dock_deliver.world" /> -->
-    <!-- <arg name="course" default="example_course.world" /> -->
-    <arg name="world" default="" />
+    <param name="/use_sim_time" value="true" />
+
+    <arg name="gui" default="true" />
+    <arg name="paused" default="false" />
+    <arg name="initial_lat" default="-33.72414" />
+    <arg name="initial_lon" default="150.6795" />
+
+    <!-- Launch base world -->
+    <arg name="course" default="finals_course.world" />
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find robotx_2022)/worlds/$(arg course)" />
+        <arg name="verbose" value="true" />
+        <arg name="paused" value="$(arg paused)" />
+        <arg name="gui" value="$(arg gui)" />
+    </include>
+
 
     <!-- various starting positions of asv -->
     <!-- pre_qualification_1 -->
@@ -41,11 +50,11 @@ roslaunch robotx_2022 robotx.launch world:="2.2" asv:="asv" uav:="jellyfish"
     <arg name="asv_yaw" default="1.970796327" /> -->
 
     <!-- qualification -->
-    <arg name="course" default="qualification_course.world" />
+    <!-- <arg name="course" default="qualification_course.world" />
     <arg name="asv_x" default="-857" />
     <arg name="asv_y" default="324" />
     <arg name="asv_z" default="0" />
-    <arg name="asv_yaw" default="1.6" />
+    <arg name="asv_yaw" default="1.6" /> -->
 
     <!-- main entrance -->
     <!-- <arg name="asv_x" default="-788.91" />
@@ -59,12 +68,12 @@ roslaunch robotx_2022 robotx.launch world:="2.2" asv:="asv" uav:="jellyfish"
     <arg name="asv_z" default="0" />
     <arg name="asv_yaw" default="1.170796327" /> -->
 
-    <!-- <arg name="course" default="finals_course.world" />
-    <arg name="asv_x" default="-481.91" />
+    <!-- <arg name="course" default="finals_course.world" /> -->
+    <!-- <arg name="asv_x" default="-481.91" />
     <arg name="asv_y" default="163.92" />
     <arg name="asv_z" default="0" />
-    <arg name="asv_yaw" default="1.570796327" /> -->
-    
+    <arg name="asv_yaw" default="1.570796327" />
+     -->
 
     <!-- <arg name="asv_x" default="-532" />
         <arg name="asv_y" default="162" />
@@ -77,8 +86,10 @@ roslaunch robotx_2022 robotx.launch world:="2.2" asv:="asv" uav:="jellyfish"
     <arg name="asv_z" default="0.1" /> -->
 
     <!-- Options are: 'vrx' and 'asv' -->
-    <arg name="asv" default="asv" /> <!--There should be an upload.launch file in the $(arg asv)_urdf package-->
-    <arg name="asv_name" default="$(eval 'wamv' if arg('asv')=='vrx' else arg('asv'))" /> <!-- namespace of the vehicle -->
+    <!--There should be an upload.launch file in the $(arg asv)_urdf package-->
+    <!-- <arg name="asv" default="asv" /> -->
+    <!-- namespace of the vehicle -->
+    <!-- <arg name="asv_name" default="$(eval 'wamv' if arg('asv')=='vrx' else arg('asv'))" /> -->
 
     <!-- <arg name="asv_x" default="158" />
     <arg name="asv_y" default="108" />
@@ -86,14 +97,15 @@ roslaunch robotx_2022 robotx.launch world:="2.2" asv:="asv" uav:="jellyfish"
     <!-- <arg name="asv_yaw" default="-0.5" /> -->
 
     <!-- Options are: 'jellyfish' -->
-    <arg name="uav" default="" /> <!--There should be an upload.launch file in the $(arg asv)_urdf package-->
-    <arg name="uav_name" default="dji_m210" /> <!-- namespace of the vehicle -->
+     <!--There should be an upload.launch file in the $(arg uav)_urdf package-->
+    <!-- <arg name="uav" default="" />
+    <arg name="uav_name" default="dji_m210" /> -->
 
     <!-- launch uav above asv_urdf.-->
-    <arg name="uav_x" default="$(eval arg('asv_x') + 0.3835657821)" />
+    <!-- <arg name="uav_x" default="$(eval arg('asv_x') + 0.3835657821)" />
     <arg name="uav_y" default="$(eval arg('asv_y'))" />
     <arg name="uav_z" default="$(eval arg('asv_z') + 1.22242738937)" />
-    <arg name="uav_yaw" default="$(arg asv_yaw)" />
+    <arg name="uav_yaw" default="$(arg asv_yaw)" /> -->
 
     <!-- launch uav above water.
         z>=0.3 if the platform is launched so it won't enter the water and break -->
@@ -102,37 +114,4 @@ roslaunch robotx_2022 robotx.launch world:="2.2" asv:="asv" uav:="jellyfish"
     <arg name="uav_z" default="0.3" />
     <arg name="uav_yaw" default="0" /> -->
 
-    <arg name="gui" default="true" />
-    <arg name="paused" default="false" /> <!-- start world paused so the sim can load properly -->
-    <!-- <arg name="initial_lat"   default="-33.724223"/>
-    <arg name="initial_lon"   default="150.679736"/> -->
-    <arg name="initial_lat" default="-33.72414" />
-    <arg name="initial_lon" default="150.6795" />
-
-    <!-- Launch base world -->
-    <group if="$(eval world=='')">
-        <include file="$(find gazebo_ros)/launch/empty_world.launch">
-            <arg name="world_name" value="$(find robotx_2022)/worlds/$(arg course)" />
-            <arg name="verbose" value="true" />
-            <arg name="paused" value="$(arg paused)" />
-            <arg name="gui" value="$(arg gui)" />
-        </include>
-    </group>
-
-    <group if="$(eval world==22)">
-        <include file="$(find gazebo_ros)/launch/empty_world.launch">
-            <arg name="world_name" value="$(find robotx_2022)/worlds/robotx_22.world" />
-            <arg name="verbose" value="true" />
-            <arg name="paused" value="$(arg paused)" />
-            <arg name="gui" value="$(arg gui)" />
-        </include>
-    </group>
-    <group if="$(eval world=='vrx')">
-        <include file="$(find gazebo_ros)/launch/empty_world.launch">
-            <arg name="world_name" value="$(find vrx_gazebo)/worlds/$(arg course)" />
-            <arg name="verbose" value="true" />
-            <arg name="paused" value="$(arg paused)" />
-            <arg name="gui" value="$(arg gui)" />
-        </include>
-    </group>
 </launch>
